@@ -26,7 +26,10 @@ export const Form = () => {
         if (newItem) {
             if (window.location.hash === '#tags=') {
                 searchParams(window.location.hash += newItem);
-            } else {
+            } else if (window.location.hash === "") {
+                searchParams(window.location.hash += "#tags=" + newItem);
+            }
+            else {
                 searchParams(window.location.hash += "," + newItem);
             }
             setNewItem('');
