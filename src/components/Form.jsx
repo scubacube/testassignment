@@ -1,7 +1,15 @@
-import {Button, TextField} from "@material-ui/core";
+import {Button, makeStyles, TextField} from "@material-ui/core";
 import React, {useState} from "react";
 
+const useStyles = makeStyles((theme) => ({
+    myForm: {
+        display: "flex"
+    }
+}));
+
 export const Form = () => {
+    const classes = useStyles();
+
     let [newItem, setNewItem] = useState('');
 
     function onChange(e) {
@@ -26,7 +34,7 @@ export const Form = () => {
     }
 
     return (
-        <form className="myForm">
+        <form className={classes.myForm}>
             <TextField type="text" id="outlined-basic" label="Add an item" variant="outlined" value={newItem}
                        onChange={onChange}/>
             <Button onClick={e => handleSubmit(e)} variant="contained" color="primary">
