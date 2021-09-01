@@ -16,10 +16,9 @@ export const Form = () => {
         }
 
         if (newItem) {
-            if(window.location.hash === '#tags=') {
+            if (window.location.hash === '#tags=') {
                 searchParams(window.location.hash += newItem);
-            }
-            else {
+            } else {
                 searchParams(window.location.hash += "," + newItem);
             }
             setNewItem('');
@@ -28,7 +27,8 @@ export const Form = () => {
 
     return (
         <form className="myForm">
-            <TextField type="text" id="outlined-basic" label="Add an item" variant="outlined" value={newItem} onChange={onChange}/>
+            <TextField type="text" id="outlined-basic" label="Add an item" variant="outlined" value={newItem}
+                       onChange={onChange}/>
             <Button onClick={e => handleSubmit(e)} variant="contained" color="primary">
                 Send
             </Button>

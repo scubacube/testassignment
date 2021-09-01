@@ -10,7 +10,10 @@ const useStyles = makeStyles((theme) => ({
         padding: '15px 10px',
         maxWidth: 360,
         backgroundColor: theme.palette.background.default,
-
+        height: "100%",
+        margin: "0",
+        alignItems: "center",
+        justifyContent: "center"
     }
 }));
 
